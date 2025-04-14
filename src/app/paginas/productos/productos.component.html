@@ -12,10 +12,20 @@
 <div [ngClass] = "{'activo': usuario.activo, 'inactivo': !usuario.activo }">
   {{ usuario.nombre }}
 </div>
---!-->
+
 <form action="nombre">
-  <label for="nombre">Nombre:</label>
-  <input id="nombre" [(ngModel)]="usuario.nombre" name="nombre" required>
-  
-  <button [disabled]="!usuario.nombre">Enviar</button>
-</form>
+    <label for="nombre">Nombre:</label>
+    <input id="nombre" [(ngModel)]="usuario.nombre" name="nombre" required>
+    
+    <button [disabled]="!usuario.nombre">Enviar</button>
+  </form>
+--!-->
+
+<div *ngFor ="let producto of productos; let i = index" >
+  <p> {{ i+1 }}</p> <img src="{{ producto.img }}" alt="">
+  <div class="card-container" >
+  <p>Nombre : {{ producto.nombre }}</p>
+    <p>Precio : {{ producto.precio }}</p>
+  </div>
+
+</div>
